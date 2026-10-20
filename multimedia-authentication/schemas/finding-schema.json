@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mmforensics:multimedia-authentication:finding:v1",
+  "title": "Multimedia forensic finding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["finding_id", "proposition", "item", "location", "observations", "interpretation", "alternatives", "methods", "limitations", "conclusion", "review_status"],
+  "properties": {
+    "finding_id": {"type": "string", "minLength": 1},
+    "proposition": {"type": "string", "minLength": 1},
+    "item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["item_id", "sha256"],
+      "properties": {
+        "item_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+        "generation": {"type": "string", "description": "Original, export, platform derivative, or unknown."}
+      }
+    },
+    "location": {
+      "type": "object", "additionalProperties": false,
+      "description": "Source coordinates or time; do not use unstated transformed coordinates.",
+      "properties": {
+        "pixel_region": {"type": "object", "additionalProperties": false, "required": ["x", "y", "width", "height"], "properties": {"x": {"type": "integer", "minimum": 0}, "y": {"type": "integer", "minimum": 0}, "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}}},
+        "start_seconds": {"type": "number", "minimum": 0},
+        "end_seconds": {"type": "number", "minimum": 0},
+        "timebase": {"type": "string"},
+        "frame_or_sample_index": {"type": "integer", "minimum": 0},
+        "description": {"type": "string"}
+      }
+    },
+    "observations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "interpretation": {"type": "string"},
+    "alternatives": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["explanation", "test_or_reason"], "properties": {"explanation": {"type": "string"}, "test_or_reason": {"type": "string"}, "result": {"type": "string"}}}},
+    "methods": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["method", "tool_or_source", "version_or_identifier", "settings_or_steps", "result"], "properties": {"method": {"type": "string"}, "tool_or_source": {"type": "string"}, "version_or_identifier": {"type": "string"}, "settings_or_steps": {"type": "string"}, "result": {"type": "string"}, "output_item_id": {"type": "string"}}}},
+    "corroboration": {"type": "array", "items": {"type": "string"}},
+    "contrary_evidence": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "conclusion": {"type": "string", "minLength": 1},
+    "conclusion_category": {"enum": ["supported", "inconsistent", "inconclusive", "no-indication-detected", "consistent-with-original", "inconsistent-with-original"]},
+    "review_status": {"enum": ["preliminary-unreviewed", "independently-reviewed"]},
+    "reviewer": {"type": "object", "additionalProperties": false, "required": ["name", "qualification", "review_date", "scope"], "properties": {"name": {"type": "string"}, "qualification": {"type": "string"}, "review_date": {"type": "string", "format": "date"}, "scope": {"type": "string"}, "disagreement_resolution": {"type": "string"}}}
+  }
+}

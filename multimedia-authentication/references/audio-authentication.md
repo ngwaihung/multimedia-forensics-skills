@@ -1,0 +1,15 @@
+# Audio authentication
+
+This procedure follows [SWGDE *Best Practices for Digital Audio Authentication*, 15-A-001-1.3](https://www.swgde.org/documents/published-complete-listing/15-a-001-swgde-best-practices-for-digital-audio-authentication/). Verify its current version and apply laboratory methods validated for the submitted file generation. The document addresses digital audio files; conclusions about analog originals, live streams, speaker identity, or the truth of spoken content need other methods.
+
+Identify original recording, export, voice-message transcode, extracted video stream, or unknown. Record codec, sample rate, bit depth when uncompressed, channels, duration, timestamps, and any clock or resampling history. Demux without transcoding when possible; if decoding is required, document it and preserve the encoded source.
+
+For a suspected splice, locate the interval and inspect waveform, spectrogram, phase, channel relationship, spectral floor, reverberation, ambient sound, mains hum, codec frames, and temporal continuity. Compare speech and room tone across both sides of a boundary. Capture devices can apply automatic gain, noise suppression, echo cancellation, voice activity detection, and packet-loss concealment; these can create abrupt changes without an edit. Clipping and transients also produce misleading spectrogram features.
+
+Listen at original speed first and document the channel, playback chain, and any processing. Slowed playback, filtering, source separation, and enhancement are derivatives; never use them as sole evidence of words or events. For contested speech content, preserve uncertainty, provide time-aligned alternatives, and avoid attributing identity or intent from audio artifacts alone.
+
+Where possible, corroborate a candidate splice with encoded-frame discontinuity, a second independent acoustic indicator, video synchrony, or a source recording. State the timebase and uncertainty of every marked boundary. A clean waveform or continuous noise floor does not prove an unedited recording.
+
+Separate global tests (format/structure, quantization, DC offset, long-term spectrum, compression history, ENF where present) from local tests (waveform, power, spectrogram, abrupt joins, channel relationship). Choose tests for their ability to distinguish a claimed edit from recorder behavior or benign processing. For a measured result, retain sample rate, window, overlap, filter, threshold, calibration/control data, and uncertainty. When testing a purported recorder, compare its native and exported files under matched settings; obtaining exemplars from an evidence device requires authority and a recorded assessment of state changes.
+
+Report conclusions relative to the assertion as consistent with an original, inconsistent with an original, or inconclusive, with the basis and limitations stated. Distinguish a detected discontinuity from its cause: a recording pause, voice-activated recording, transmission loss, and post-capture splice may produce different but overlapping signals. Do not express absolute certainty or a numerical probability without a sound model.

@@ -1,0 +1,25 @@
+# Image authentication
+
+This procedure is adapted from [SWGDE, *Best Practices for Image Authentication*, 18-I-001-2.0 (3 March 2025), §§ 2, 4, 6-9](https://www.swgde.org/wp-content/uploads/2025/03/2025-03-03-Best-Practices-for-Image-Authentication-18-I-001-2.0.pdf). Verify the current SWGDE version before relying on it in a new case. The document addresses image authentication, including image series and video; use the video-specific skill for temporal and container questions. This procedure does not replace examiner training, laboratory SOPs, or technical validation of a chosen method.
+
+## Scope and suitability
+
+Define the criteria for "authentic" in this request and formulate propositions that can be compared. Authentication concerns whether an image accurately represents the source data or scene under those criteria, and may concern source attribution. Questions such as identifying a person, object, or event are content analysis and need their own method. A hash establishes byte integrity from acquisition onward; it does not establish scene truth. Staging before capture is a separate possibility and may require scene evidence or other images.
+
+Review image quantity and quality before selecting tests. A single still can contain an undetectable alteration. Seek the highest-quality original, related series, or video and suitable reference images when available. If resolution, compression, luminosity, number of images, or comparison material is inadequate for the proposed method, narrow or decline the opinion and explain why. Record task-relevant allegations while limiting exposure to unrelated case context; document any bias controls used.
+
+## Examine structure and content
+
+Preserve originals and work from verified copies. Record contemporaneous notes with item IDs, locations, tools, settings, results, and derivatives. Establish file generation: camera original, raw development, screenshot, messaging-app export, scan, or unknown. Examine structure: byte-level format and packaging, header/footer as needed, metadata and embedded previews, dimensions, bit depth, color profile, orientation, compression, processing history, and sensor/noise characteristics. Treat metadata as alterable. If a raw or earlier version exists, compare it before interpreting artifacts in a derivative.
+
+Examine scene content as a distinct evidence stream: geometry, scale, perspective, physical interactions, composition, illumination, reflections, shadows, temporal or geographic consistency when independently grounded, focus, depth of field, grain, and lens behavior. Inspect at native scale and sensible enlargements. For a manipulation proposition, localize the claimed change and define a benign rival. Choose discriminating signal tests such as JPEG quantization and block structure, double compression, resampling traces, local noise/PRNU consistency, color-filter-array or demosaicing behavior, edge and alpha compositing, or copy-move similarity. Each test needs assumptions, a region of interest, controls, and known failure modes.
+
+For a source-camera proposition, obtain suitable exemplars and use a validated comparison method such as PRNU where the image quality and processing history allow it. Document exemplar acquisition conditions, device state, controls, correlation method, thresholds, and error behavior. Capturing new exemplars on a seized device changes it; obtain case authority for that action and document the change. An absent or weak source signature does not exclude the camera without method-specific support.
+
+Compression heatmaps and error-level analysis are visualization aids. Uneven values can arise from texture, saturation, prior processing, or recompression. A local anomaly may locate an area for further testing; it does not establish splicing. Absence of a camera signature does not establish synthesis when the file has been resized, denoised, or re-encoded.
+
+When comparing regions, match texture, brightness, color, and compression exposure where possible. Check boundaries and neighboring regions, not only a selected suspicious patch. Document crop coordinates in original orientation, channels, scale, transforms, thresholds, and software versions. Evaluate the significance of each observation under both propositions, considering supporting and contrary evidence. Report when small size, heavy compression, or multiple exports make a test non-diagnostic.
+
+## Opinion and review
+
+Explain the observed features that support the opinion and the strength of that opinion. Qualify it for method and research limitations, image quality/quantity, and available references. Do not report numerical probabilities without a proper scientific basis. Submit final findings for independent review by a comparably trained examiner; the analyzing agent cannot review its own work independently. Record the reviewer and how any disagreement was resolved. If review cannot occur, mark the opinion preliminary and unreviewed. A negative search for anomalies is not proof of authenticity.
